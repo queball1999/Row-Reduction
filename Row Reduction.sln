@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Row Reduction", "Row Reduction\Row Reduction.pyproj", "{FEB9007D-B90D-4C43-94E4-D60337E5A851}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEB9007D-B90D-4C43-94E4-D60337E5A851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEB9007D-B90D-4C43-94E4-D60337E5A851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E8F74E5-5569-429E-BD24-6C022F465DC9}
+	EndGlobalSection
+EndGlobal
