@@ -14,8 +14,6 @@ This is a simple row reduction formula project intended for MATH313 at the Unive
 4. Run the code, and it will prompt you to enter the number of rows and columns for your matrix. Then, you can input the matrix elements row-wise.
 5. The code will display the initial matrix and its row-echelon form in the terminal.
 
-## Author
-Quynn Bell
 
 ## Functions
 ### 'row_reduction(matrix)'
