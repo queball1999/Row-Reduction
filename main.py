@@ -50,7 +50,7 @@ def row_reduction(matrix):
                 matrix[i, :] -= matrix[i, c] * matrix[r, :]
 
         r += 1
-
+        3
     threshold = 1e-10
     matrix[np.abs(matrix) < threshold] = 0
 
@@ -65,6 +65,8 @@ def input_matrix():
         numpy.ndarray: The matrix entered by the user.
     """
     try:
+        ascii_art()
+        print('This is a simple row reduction program. Please enter the following information:')
         # Prompt the user for the number of rows and columns
         num_rows = int(input("Enter the number of rows: "))
         num_cols = int(input("Enter the number of columns: "))
@@ -84,6 +86,16 @@ def input_matrix():
         print("Invalid input. Please enter valid numeric values.")
         return input_matrix()
 
+
+def ascii_art():
+    print("""
+          _____                 _____          _            _   _              
+         |  __ \               |  __ \        | |          | | (_)             
+         | |__) |_____      __ | |__) |___  __| |_   _  ___| |_ _  ___  _ __   
+         |  _  // _ \ \ /\ / / |  _  // _ \/ _` | | | |/ __| __| |/ _ \| '_ \  
+         | | \ \ (_) \ V  V /  | | \ \  __/ (_| | |_| | (__| |_| | (_) | | | | 
+         |_|  \_\___/ \_/\_/   |_|  \_\___|\__,_|\__,_|\___|\__|_|\___/|_| |_|
+         """, end='\n\n')
 
 def test_case(matrix=np.array):
     """
