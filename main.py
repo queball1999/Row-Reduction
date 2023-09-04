@@ -57,21 +57,54 @@ def row_reduction(matrix):
     return matrix
 
 
-def test_case():
-    # Define test case array
-    A = np.array([[12, -7, 11, -9, 5],
-              [-9, 4, -8, 7, -6],
-              [-6, 11, -7, 3, -9],
-              [4, -6, 10, -5, 12]])
+def input_matrix():
+    """
+    Prompt the user for the number of rows and columns of a matrix, and then collect the matrix elements.
+
+    Returns:
+        numpy.ndarray: The matrix entered by the user.
+    """
+    try:
+        # Prompt the user for the number of rows and columns
+        num_rows = int(input("Enter the number of rows: "))
+        num_cols = int(input("Enter the number of columns: "))
+
+        # Initialize an empty matrix
+        matrix = np.zeros((num_rows, num_cols))
+
+        # Prompt the user for each element of the matrix
+        print("Enter matrix elements row-wise:")
+        for i in range(num_rows):
+            for j in range(num_cols):
+                matrix[i, j] = float(input(f"Enter element at row {i + 1}, column {j + 1}: "))
+
+        return matrix
+
+    except ValueError:
+        print("Invalid input. Please enter valid numeric values.")
+        return input_matrix()
+
+
+def test_case(matrix=np.array):
+    if not matrix.any():
+        # Define test case array
+        matrix = np.array([[12, -7, 11, -9, 5],
+                  [-9, 4, -8, 7, -6],
+                  [-6, 11, -7, 3, -9],
+                  [4, -6, 10, -5, 12]])
     
     # Pass array into row_reduction function
-    row_echelon_form = row_reduction(A)
+    row_echelon_form = row_reduction(matrix)
 
     # Display output in terminal
+    print("Inital Matrix:")
+    print(matrix)
     print("Row-Echelon Form:")
     print(row_echelon_form)
 
 
 if __name__ == '__main__':
-    test_case()
-
+    user_matrix = input_matrix()
+    print("Matrix entered by the user:")
+    print(user_matrix)
+    test_case(user_matrix)
