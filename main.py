@@ -86,6 +86,13 @@ def input_matrix():
 
 
 def test_case(matrix=np.array):
+    """
+    This function is used to test the row reduction functionality with an optional input matrix. If no matrix is provided, a default test case will be used.
+
+    Args:
+        matrix (numpy.ndarray, optional): The input matrix for testing.
+    """
+    # If no matrix is passed as parameter, define default test case
     if not matrix.any():
         # Define test case array
         matrix = np.array([[12, -7, 11, -9, 5],
