@@ -23,11 +23,11 @@ def row_reduction(matrix):
         matrix (numpy.ndarray): The row-echelon form of the input matrix.
     """
 
-    # Convert the matrix to floating-point integers
-    matrix = matrix.astype(float)
-    # use shape to get rows and columns of the matrix
-    m, n = matrix.shape
+    steps = []  # List to store solution steps
+    matrix = matrix.astype(float)   # Convert the matrix to floating-point integers
+    m, n = matrix.shape # use shape to get rows and columns of the matrix
     r = 0  # Row index
+    steps.append(matrix.copy()) # Add matrix to steps
     for c in range(n):
         # Find the pivot element
         pivot_row = r
@@ -50,11 +50,12 @@ def row_reduction(matrix):
                 matrix[i, :] -= matrix[i, c] * matrix[r, :]
 
         r += 1
+        steps.append(matrix.copy()) # Add matrix to steps
 
     threshold = 1e-10
     matrix[np.abs(matrix) < threshold] = 0
 
-    return matrix
+    return matrix, steps
 
 
 def input_matrix():
@@ -101,17 +102,18 @@ def test_case(matrix=np.array):
                   [4, -6, 10, -5, 12]])
     
     # Pass array into row_reduction function
-    row_echelon_form = row_reduction(matrix)
+    row_echelon_form, steps = row_reduction(matrix)
 
     # Display output in terminal
-    print("Inital Matrix:")
-    print(matrix)
+    print('Here are the solution steps:')
+    for i, step_matrix in enumerate(steps):
+        print(f"Step {i + 1}:")
+        print(step_matrix)
+        print()
+
     print("Row-Echelon Form:")
     print(row_echelon_form)
 
-
 if __name__ == '__main__':
     user_matrix = input_matrix()
-    print("Matrix entered by the user:")
-    print(user_matrix)
     test_case(user_matrix)
