@@ -50,7 +50,7 @@ def row_reduction(matrix):
                 matrix[i, :] -= matrix[i, c] * matrix[r, :]
 
         r += 1
-        3
+        
     threshold = 1e-10
     matrix[np.abs(matrix) < threshold] = 0
 
