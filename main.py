@@ -12,7 +12,7 @@
 
 import numpy as np
 
-def row_reduction(matrix):
+def row_reduction(matrix: np.array):
     """
     This function performs row reduction on a given matrix to convert it to row-echelon form.
 
